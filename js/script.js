@@ -603,7 +603,7 @@ function initializeHeaderScroll() {
     if (scrollTop > 100) {
       if (isScrollingUp) {
         // Scrolling up - show header
-        header.style.transform = "translateY(0)";
+        header.style.transform = "translateY(-92px)";
         header.style.backdropFilter = "blur(10px)";
       } else {
         // Scrolling down - hide header
