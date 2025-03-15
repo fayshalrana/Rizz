@@ -1,7 +1,7 @@
 .footer {
-    background: linear-gradient(to top, rgb(31, 31, 31) 0%, rgba(61, 85, 204, 0.644) 100%);
+    @include gradient-footer;
     padding-top: 80px;
-    color: #fff;
+    color: color('white');
 
     .footer_top {
         display: grid;
@@ -42,20 +42,17 @@
                 padding: 2px;
                 background: linear-gradient(
                     to bottom,
-                    rgba(255, 255, 255, 0.1),
-                    // top
-                    rgba(255, 255, 255, 0.1),
-                    // right
-                    rgba(255, 255, 255, 0.1),
-                    // bottom
-                    rgba(255, 255, 255, 0.1) // left
+                    color('bg-semi'),
+                    color('bg-semi'),
+                    color('bg-semi'),
+                    color('bg-semi')
                 );
                 -webkit-mask:
-                    linear-gradient(#fff 0 0) content-box,
-                    linear-gradient(#fff 0 0);
+                    linear-gradient(color('white') 0 0) content-box,
+                    linear-gradient(color('white') 0 0);
                 mask:
-                    linear-gradient(#fff 0 0) content-box,
-                    linear-gradient(#fff 0 0);
+                    linear-gradient(color('white') 0 0) content-box,
+                    linear-gradient(color('white') 0 0);
                 -webkit-mask-composite: xor;
                 mask-composite: exclude;
             }
@@ -74,7 +71,7 @@
                     margin-bottom: 20px;
                     font-family: $font-main;
                     font-weight: 400;
-                    color: #fff;
+                    color: color('white');
 
                     @media (max-width: 768px) {
                         font-size: 32px;
@@ -82,7 +79,7 @@
                 }
 
                 p {
-                    color: rgba(255, 255, 255, 0.8);
+                    color: color('text-secondary');
                     font-size: 16px;
                     font-family: $font-main;
                     font-weight: 400;
@@ -103,19 +100,19 @@
                 align-items: center;
                 border-radius: 8px;
                 z-index: 4;
-                border: 1px solid rgba(255, 255, 255, 1);
+                border: 1px solid color('border-white');
                 transition: border-color 0.3s ease;
 
                 &:focus-within {
-                    border-color: rgba(255, 255, 255, 0.3);
+                    border-color: rgba(color('white'), 0.3);
                 }
 
                 input {
                     flex: 1;
-                    background: transparent;
+                    background: color('transparent');
                     border: none;
                     padding: 16px 20px;
-                    color: #fff;
+                    color: color('white');
                     font-family: "Neue Montreal", sans-serif;
                     font-size: 16px;
                     font-weight: 400;
@@ -123,7 +120,7 @@
                     min-width: auto;
 
                     &::placeholder {
-                        color: rgba(255, 255, 255, 0.5);
+                        color: rgba(color('white'), 0.5);
                     }
 
                     &:focus {
@@ -136,7 +133,7 @@
                 }
 
                 button {
-                    background: transparent;
+                    background: color('transparent');
                     border: none;
                     padding: 12px;
                     cursor: pointer;
@@ -146,7 +143,7 @@
                     transition: opacity 0.3s ease;
 
                     &:hover {
-                        opacity: 0.8;
+                        opacity: color('opacity-80');
                     }
 
                     img {
@@ -182,7 +179,7 @@
                     font-weight: 400;
                     letter-spacing: 0.5px;
                     margin-bottom: 30px;
-                    color: rgba(255, 255, 255, 1);
+                    color: color('border-white');
                 }
 
                 ul {
@@ -198,7 +195,7 @@
                         margin-bottom: 16px;
 
                         a {
-                            color: rgba(255, 255, 255, 1);
+                            color: color('border-white');
                             font-size: 16px;
                             font-family: $font-main;
                             font-weight: 400;
@@ -207,7 +204,7 @@
                             transition: color 0.3s;
 
                             &:hover {
-                                color: #fff;
+                                color: color('white');
                             }
                         }
                     }
@@ -217,11 +214,11 @@
                     margin-bottom: 30px;
 
                     a {
-                        color: rgba(255, 255, 255, 0.8);
+                        color: color('text-secondary');
                         text-decoration: none;
 
                         &:hover {
-                            color: #fff;
+                            color: color('white');
                         }
                     }
                 }
@@ -237,12 +234,12 @@
                         display: flex;
                         align-items: center;
                         justify-content: center;
-                        background: rgba(255, 255, 255, 0.1);
+                        background: color('bg-semi');
                         border-radius: 50%;
                         transition: background 0.3s;
 
                         &:hover {
-                            background: rgba(255, 255, 255, 0.2);
+                            background: color('bg-hover');
                         }
 
                         img {
@@ -260,9 +257,6 @@
         grid-template-columns: repeat(2, 1fr);
         margin: 72px 0 0;
         gap: 182px;
-        padding: 40px 0;
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 
         @media (max-width: 1024px) {
             grid-template-columns: repeat(2, 1fr);
@@ -324,7 +318,7 @@
                 }
 
                 p {
-                    color: rgba(255, 255, 255, 1);
+                    color: color('border-white');
                     font-size: 16px;
                     line-height: 160%;
                     text-align: left;
@@ -351,7 +345,7 @@
 
             img {
                 max-width: 100%;
-                opacity: 0.4;
+                opacity: color('opacity-40');
 
                 @media (max-width: 768px) {
                     max-width: 280px;

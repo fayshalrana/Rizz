@@ -87,3 +87,144 @@ $cat-5: linear-gradient(to bottom right, #70cbf2, #97b0fb);
     font-style: italic;
     font-display: swap;
 }
+
+// Font Family
+$font-main: "Neue Montreal", sans-serif;
+
+// Color System
+$colors: (
+    // Base colors
+    "white": #fff,
+    "black": #000,
+    "transparent": transparent,
+
+    // Theme colors
+    "primary": #e1c06e,
+    "primary-dark": #c1842d,
+    "primary-light": #ecc974,
+    "secondary": #31418c,
+
+    // Text colors
+    "text-primary": #faf8f2,
+    "text-secondary": rgba(255, 255, 255, 0.8),
+    "text-muted": rgba(255, 255, 255, 0.6),
+    "text-dark": #2b3147,
+
+    // Background colors
+    "bg-dark": rgba(18, 18, 18, 0.5),
+    "bg-darker": rgba(31, 31, 31, 0.3),
+    "bg-overlay": rgba(0, 0, 0, 0.85),
+    "bg-semi": rgba(255, 255, 255, 0.1),
+    "bg-hover": rgba(255, 255, 255, 0.2),
+    "bg-input": rgba(67, 67, 67, 0.16),
+    "bg-button": #22242d,
+
+    // Border colors
+    "border-light": rgba(255, 255, 255, 0.1),
+    "border-white": rgba(255, 255, 255, 1),
+    // Gradient colors
+    "gradient-gold":
+        (
+            "start": #c1842d,
+            "end": #ecc974
+        ),
+    "gradient-pink": (
+        "start": #db5095,
+        "end": #1945e8
+    ),
+    "gradient-badge": (
+        "start": rgba(215, 140, 108, 1),
+        "end": rgba(167, 83, 86, 1)
+    ),
+    "gradient-footer": (
+        "start": rgb(31, 31, 31),
+        "end": rgba(61, 85, 204, 0.644)
+    ),
+
+    // Opacity levels
+    "opacity-40": 0.4,
+    "opacity-50": 0.5,
+    "opacity-60": 0.6,
+    "opacity-70": 0.7,
+    "opacity-80": 0.8,
+    "opacity-85": 0.85
+);
+
+// Functions to get colors
+@function color($key) {
+    @return map-get($colors, $key);
+}
+
+@function gradient-color($gradient, $position) {
+    $gradient-map: map-get($colors, $gradient);
+    @return map-get($gradient-map, $position);
+}
+
+// Gradient Mixins
+@mixin gradient-primary {
+    background: linear-gradient(
+        to bottom,
+        gradient-color("gradient-gold", "start"),
+        gradient-color("gradient-gold", "end")
+    );
+}
+
+@mixin gradient-hero {
+    background: linear-gradient(
+        90deg,
+        gradient-color("gradient-pink", "start"),
+        gradient-color("gradient-pink", "end")
+    );
+}
+
+@mixin gradient-badge {
+    background: linear-gradient(
+        90deg,
+        gradient-color("gradient-badge", "start"),
+        gradient-color("gradient-badge", "end")
+    );
+}
+
+@mixin gradient-footer {
+    background: linear-gradient(
+        to top,
+        gradient-color("gradient-footer", "start"),
+        gradient-color("gradient-footer", "end")
+    );
+}
+
+// Text Mixins
+@mixin Headline-1 {
+    color: color("white");
+    font-size: 96px;
+    font-weight: 400;
+    line-height: 120%;
+    font-family: $font-main;
+}
+
+@mixin Headline-2 {
+    color: color("white");
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 120%;
+    font-family: $font-main;
+}
+
+@mixin text-gradient {
+    background: linear-gradient(
+        90deg,
+        gradient-color("gradient-gold", "start"),
+        gradient-color("gradient-gold", "end")
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+
+// Layout Mixins
+@mixin flex-column-start {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}

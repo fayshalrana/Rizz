@@ -22,7 +22,7 @@
         right: 0;
         height: 4px;
         border-radius: 2px;
-        background: #fff;
+        background: color("white");
         transition: all 0.35s cubic-bezier(0.5, -0.35, 0.35, 1.5);
     }
 
@@ -104,7 +104,7 @@
 
                     li {
                         a {
-                            color: #faf8f2;
+                            color: color("text-primary");
                             text-decoration: none;
                             font-size: 16px;
                             display: flex;
@@ -113,7 +113,7 @@
                             transition: color 0.3s ease;
 
                             &:hover {
-                                color: #2b3147;
+                                color: color("text-dark");
                             }
 
                             &.has-dropdown {
@@ -163,42 +163,31 @@
                     font-weight: 500;
 
                     &.sign-up {
-                        background: #e1c06e;
-                        color: #000;
+                        background: color("primary");
+                        color: color("black");
                         position: relative;
-                        border: 2px solid transparent;
+                        border: 2px solid color("transparent");
                         background-clip: padding-box;
 
                         // Gradient border
                         &::before {
-                            content: "";
-                            position: absolute;
-                            top: -2px;
-                            right: -2px;
-                            bottom: -2px;
-                            left: -2px;
-                            z-index: -1;
-                            border-radius: 100px;
-                            background: linear-gradient(to bottom, #c1842d, #ecc974);
+                            @include gradient-primary;
                         }
 
                         &:hover {
-                            background: transparent;
-                            color: #fff;
-                            border: 2px solid #fff;
-                            &::before {
-                                opacity: 0;
-                            }
+                            background: color("transparent");
+                            color: color("white");
+                            border-color: color("white");
                         }
                     }
 
                     &.log-in {
-                        background: transparent;
-                        color: #fff;
-                        border: 2px solid #fff;
+                        background: color("transparent");
+                        color: color("white");
+                        border: 2px solid color("white");
 
                         &:hover {
-                            background: rgba(255, 255, 255, 0.1);
+                            background: color("bg-semi");
                         }
                     }
                 }
@@ -254,7 +243,7 @@
 
             &.show {
                 display: flex;
-                background: rgba(0, 0, 0, 0.85);
+                background: color("bg-overlay");
                 backdrop-filter: blur(10px);
                 -webkit-backdrop-filter: blur(10px);
             }
@@ -263,7 +252,7 @@
                 flex-direction: column;
                 gap: 32px;
                 width: 100%;
-                background: #000; // Solid black background
+                background: color("black");
                 padding: 32px 20px;
                 border-radius: 16px;
 
@@ -275,10 +264,10 @@
                     li a {
                         font-size: 24px;
                         justify-content: center;
-                        color: #fff;
+                        color: color("white");
 
                         &:hover {
-                            color: #e1c06e;
+                            color: color("primary");
                         }
                     }
                 }

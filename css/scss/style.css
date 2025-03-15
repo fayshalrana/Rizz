@@ -242,23 +242,12 @@ body {
   background-clip: padding-box;
 }
 #header .menus_links .nav_bottom .header_actions button.sign-up::before {
-  content: "";
-  position: absolute;
-  top: -2px;
-  right: -2px;
-  bottom: -2px;
-  left: -2px;
-  z-index: -1;
-  border-radius: 100px;
   background: linear-gradient(to bottom, #c1842d, #ecc974);
 }
 #header .menus_links .nav_bottom .header_actions button.sign-up:hover {
   background: transparent;
   color: #fff;
-  border: 2px solid #fff;
-}
-#header .menus_links .nav_bottom .header_actions button.sign-up:hover::before {
-  opacity: 0;
+  border-color: #fff;
 }
 #header .menus_links .nav_bottom .header_actions button.log-in {
   background: transparent;
@@ -457,7 +446,7 @@ body {
   inset: -2px;
   border-radius: 100px;
   padding: 2px;
-  background: linear-gradient(90deg, #db5095 0%, #1945e8 100%);
+  background: linear-gradient(90deg, #db5095, #1945e8);
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
@@ -467,7 +456,7 @@ body {
   transform: translateY(-2px);
 }
 .hero .hero_content .cta_button:hover::before {
-  background: linear-gradient(90deg, #1945e8 0%, #db5095 100%);
+  background: linear-gradient(90deg, #1945e8, #db5095);
 }
 .hero .search_container {
   max-width: 612px;
@@ -481,7 +470,7 @@ body {
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
   border-radius: 100px;
-  border: 1px solid white;
+  border: 1px solid #fff;
   display: flex;
   align-items: center;
 }
@@ -933,7 +922,7 @@ body {
   letter-spacing: 2px;
   font-weight: 400;
   font-family: "Neue Montreal", sans-serif;
-  color: rgb(255, 255, 255);
+  color: #fff;
   border-bottom-left-radius: 12px;
   border-top-right-radius: 12px;
 }
@@ -941,7 +930,7 @@ body {
   background: linear-gradient(90deg, rgb(215, 140, 108), rgb(167, 83, 86));
 }
 .product .product_grid .product_card .badge.recurring {
-  background: linear-gradient(90deg, rgba(215, 140, 108, 0.301), rgba(149, 65, 57, 0.308));
+  background: rgba(215, 140, 108, 0.3);
 }
 .product .product_grid .product_card .badge.recurring::before {
   content: "";
@@ -994,7 +983,7 @@ body {
   justify-content: space-between;
 }
 .product .product_grid .product_card .product_info .price_cart .price {
-  color: rgb(255, 255, 255);
+  color: #fff;
   font-size: 12px;
   font-weight: 400;
   font-family: "Neue Montreal", sans-serif;
@@ -1002,7 +991,7 @@ body {
   padding: 0 5px 0 24px;
 }
 .product .product_grid .product_card .product_info .add_to_cart {
-  background: linear-gradient(160deg, rgb(193, 132, 45), rgb(236, 201, 116));
+  background: linear-gradient(to bottom, #c1842d, #ecc974);
   border-bottom-right-radius: 12px;
   padding: 21px 32px;
   display: flex;
@@ -1298,7 +1287,7 @@ body {
 }
 
 .footer {
-  background: linear-gradient(to top, rgb(31, 31, 31) 0%, rgba(61, 85, 204, 0.644) 100%);
+  background: linear-gradient(to top, rgb(31, 31, 31), rgba(61, 85, 204, 0.644));
   padding-top: 80px;
   color: #fff;
 }
@@ -1533,9 +1522,6 @@ body {
   grid-template-columns: repeat(2, 1fr);
   margin: 72px 0 0;
   gap: 182px;
-  padding: 40px 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 @media (max-width: 1024px) {
   .footer .footer_middle {

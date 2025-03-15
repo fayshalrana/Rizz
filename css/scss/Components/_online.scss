@@ -20,11 +20,11 @@
             flex: 1;
 
             h2 {
-              font-size: 58px;
-              font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-              font-weight: 500;
-              line-height: 120%;
-                color: $primary-white;
+                font-size: 58px;
+                font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+                font-weight: 500;
+                line-height: 120%;
+                color: color("white");
                 margin: 0;
             }
         }
@@ -51,7 +51,7 @@
                     }
 
                     span {
-                        color: $primary-white;
+                        color: color("white");
                         font-size: 18px;
                         font-weight: 400;
                         line-height: 1.4;

@@ -144,7 +144,7 @@ const products = [
   },
 ];
 
-// Add this testimonial data at the top with your other data constants
+// testimonial  other data constants
 const testimonials = [
   {
     id: 1,

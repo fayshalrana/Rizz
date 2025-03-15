@@ -158,7 +158,7 @@
                 justify-content: space-between;
 
                 h3 {
-                    color: #fff;
+                    color: color("white");
                     font-size: 36px;
                     font-weight: 500;
                     font-family: $font-main;
@@ -264,5 +264,5 @@
                 }
             }
         }
-    } 
+    }
 }

@@ -1,6 +1,6 @@
 @import "./setting.scss";
 @import "./Components/minxins";
-@import 'base/fonts';
+@import "base/fonts";
 body {
     font-family: $font-main;
 }
@@ -8,7 +8,7 @@ body {
 .container {
     max-width: 1170px;
     margin: 0 auto;
-    padding: 0 20px; 
+    padding: 0 20px;
     @media (max-width: 768px) {
         padding: 10px;
     }
@@ -26,6 +26,6 @@ body {
 @import "./Components/category";
 @import "./Components/service";
 @import "./Components/product";
-@import './Components/online';
-@import './Components/testimonial';
-@import 'Components/footer';
+@import "./Components/online";
+@import "./Components/testimonial";
+@import "Components/footer";
