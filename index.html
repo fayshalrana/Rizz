@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="javascriptreact">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- CSS link -->
+    <link rel="stylesheet" href="./css/scss/Style.css" />
+    <!-- Add these CDN links in the head section -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"
+    />
+    <!-- Add jQuery before slick.js -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+    ></script>
+  </head>
+  <body>
+    <div id="main">
+      <header id="header">
+        <div class="container">
+            <a href="#" class="logo">
+                <img src="./images/UFC_RIZZ-Logo.svg" alt="logo" />
+            </a>
+                 <div class="menus_links">
+            <!-- Top Row - Navigation + Social Icons -->
+                   <div class="nav_top">
+                    <nav>
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                  <li>
+                    <a href="#" class="has-dropdown">
+                      Category
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M6 9L12 15L18 9"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="has-dropdown">
+                      Top Products
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M6 9L12 15L18 9"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </a>
+                  </li>
+                  <li><a href="#">Contact Us</a></li>
+                  <li><a href="#">FAQs</a></li>
+                        </ul>
+              </nav>
+                        <div class="social-media">
+                            <ul>
+                  <li>
+                    <a href="#"
+                      ><img src="./images/icons/instagram.svg" alt="Instagram"
+                    /></a>
+                  </li>
+                  <li>
+                    <a href="#"
+                      ><img src="./images/icons/facebook.svg" alt="Facebook"
+                    /></a>
+                  </li>
+                            </ul>
+                        </div>
+            </div>
+            <!-- Bottom Row - Actions -->
+            <div class="nav_bottom">
+              <div class="header_actions">
+                <button class="sign-up">Sign Up</button>
+                <button class="log-in">Log In</button>
+                <a href="#" class="cart"
+                  ><img src="./images/icons/cart.svg" alt="Cart"
+                /></a>
+                    </div>
+                   </div>
+                    </div>
+                 </div>
+                </header>
+
+      <!-- Hero section  -->
+      <section class="hero">
+        <div class="container">
+          <div class="hero_content">
+            <div class="content_wrapper">
+              <h1 class="title">
+                Prescription<br />
+                Treatments For<br />
+                Your<br />
+                <span>Health Goals</span>
+              </h1>
+              <button class="cta_button">Find My Treatment</button>
+            </div>
+          </div>
+          <div class="search_container">
+            <div class="search_wrapper">
+              <div class="search_icon">
+                <img src="./images/icons/search.svg" alt="Search" />
+              </div>
+              <input
+                type="text"
+                class="search_input"
+                placeholder="Search by product/treatment"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Category section -->
+      <section class="category">
+        <div class="container">
+          <h2 class="section_title">Shop By <span>Category</span></h2>
+          <div class="category_grid">
+            <!-- Cards will be dynamically inserted here -->
+          </div>
+        </div>
+                </section>
+
+      <!-- Service section -->
+      <section class="service">
+        <div class="service_slider">
+          <div class="slider_track">
+            <!-- First set of items -->
+            <div class="service_item">
+              <img src="./images/elements.svg" alt="Secure Payment" />
+              <h3>Secure Payment</h3>
+            </div>
+            <div class="service_item">
+              <img src="./images/customer-support.svg" alt="Online Support" />
+              <h3>Online Support</h3>
+            </div>
+            <div class="service_item">
+              <img src="./images/truck-delivery.svg" alt="Free Shipping" />
+              <h3>Free Shipping</h3>
+            </div>
+            <div class="service_item">
+              <img src="./images/discount.png" alt="Best Value" />
+              <h3>Best Value</h3>
+            </div>
+
+            <!-- Duplicate set for seamless scrolling -->
+            <div class="service_item">
+              <img src="./images/elements.svg" alt="Secure Payment" />
+              <h3>Secure Payment</h3>
+            </div>
+            <div class="service_item">
+              <img src="./images/customer-support.svg" alt="Online Support" />
+              <h3>Online Support</h3>
+            </div>
+            <div class="service_item">
+              <img src="./images/truck-delivery.svg" alt="Free Shipping" />
+              <h3>Free Shipping</h3>
+            </div>
+            <div class="service_item">
+              <img src="./images/discount.png" alt="Best Value" />
+              <h3>Best Value</h3>
+            </div>
+          </div>
+        </div>
+      </section>
+
+        <!-- Product section -->
+        <section class="product">
+          <div class="container">
+            <h2 class="section_title">
+              Solutions For Your <span>Unique</span> Health Goals
+            </h2>
+  
+            <div class="product_filter">
+              <button class="tab_nav_btn prev" disabled>
+                <img style="rotate: 180deg;" src="./images/icons/right-white-arrow.svg" alt="Previous">
+              </button>
+            
+              <div class="tab_filter_btn">
+                <button class="filter_btn active" data-category="all">All</button>
+              <button class="filter_btn" data-category="best-selling">Best Selling</button>
+              <button class="filter_btn" data-category="weight-loss">Weight Loss</button>
+              <button class="filter_btn" data-category="beauty">Beauty</button>
+              <button class="filter_btn" data-category="testosterone">Testosterone</button>
+              <button class="filter_btn" data-category="sexual-health">Sexual Health</button>
+              </div>
+              <button class="tab_nav_btn next">
+                <img src="./images/icons/right-white-arrow.svg" alt="Next">
+              </button>
+</div>
+
+            <!-- Product grid -->
+            <div class="product_grid">
+              <!-- Products will be dynamically inserted here -->
+            </div>
+  
+           <!-- Product Navigation -->
+          <div class="product_navigation show">
+            <button class="nav_btn prev" disabled>
+              <img src="./images/icons/right-arrow.svg" alt="Previous">
+            </button>
+            <button class="nav_btn next">
+              <img src="./images/icons/left-arrow.svg" alt="Next">
+            </button>
+          </div>
+        </section>
+  
+
+      <!-- Online section -->
+      <section class="online">
+        <div class="container">
+          <div class="online_content">
+            <div class="content_left">
+              <h2>100% Online,<br />100% Convenient</h2>
+            </div>
+            <div class="content_right">
+              <ul class="features_list">
+                <li>
+                  <img src="./images/icons/paper-arrow.svg" alt="Check" />
+                  <span>Chat with a provider 24/7</span>
+                </li>
+                <li>
+                  <img src="./images/icons/paper-arrow.svg" alt="Check" />
+                  <span>Fast, discreet shipping</span>
+                </li>
+                <li>
+                  <img src="./images/icons/paper-arrow.svg" alt="Check" />
+                  <span
+                    >Clinically proven ingredients and FDA-approved
+                    treatments.</span
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonial section -->
+      <section class="testimonial">
+        <div class="container">
+          <h2 class="section_title">
+            Hear What <span>Rizz</span> Patients Have To Say
+          </h2>
+        </div>
+        <div class="container-fluid">
+          <div class="testimonial_slider">
+            <!-- Testimonials will be dynamically inserted here -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer section -->
+      <footer class="footer">
+        <div class="container">
+          <div class="footer_top">
+            <!-- Left side - Call to action -->
+            <div class="footer_left">
+              <div class="footer_cta">
+                <h2>Let's Stay In Touch</h2>
+                <p>Keep up to date with our latest news & special offers.</p>
+                <div class="email_signup">
+                  <input type="email" placeholder="enter your email" />
+                  <button type="submit">
+                    <img src="./images/icons/send.svg" alt="Submit" />
+                  </button>
+                </div>
+              </div>
+              <!-- HIPAA Logo below CTA -->
+              <div class="hipaa_logo">
+                <img src="./images/HIPAA-Compliant.svg" alt="HIPAA Compliant" />
+              </div>
+            </div>
+
+            <!-- Right side - Quick Links -->
+            <div class="footer_right">
+              <!-- Quick Links Column -->
+              <div class="links_column">
+                <h3>Quick Links</h3>
+                <ul>
+                  <li><a href="#">Erectile Dysfunction</a></li>
+                  <li><a href="#">Weight Loss</a></li>
+                  <li><a href="#">Men's Hair Loss</a></li>
+                </ul>
+                <div class="contact_info">
+                  <h3>Contact Info</h3>
+                  <a href="mailto:hello@rizzpharma.com">hello@rizzpharma.com</a>
+                </div>
+                <!-- Social Links -->
+                <div class="social_links">
+                  <a href="#" class="social_link facebook">
+                    <img src="./images/facebook.svg" alt="Facebook" />
+                  </a>
+                  <a href="#" class="social_link instagram">
+                    <img src="./images/instagram.svg" alt="Instagram" />
+                  </a>
+                </div>
+              </div>
+
+              <!-- Our Company Column -->
+              <div class="links_column">
+                <h3>Our Company</h3>
+                <ul>
+                  <li><a href="#">HIPAA Notice</a></li>
+                  <li><a href="#">Privacy Policy</a></li>
+                  <li><a href="#">Return & Refund Policy</a></li>
+                  <li><a href="#">Terms Of Use</a></li>
+                  <li><a href="#">CCPA Opt-Out</a></li>
+                  <li><a href="#">Opt-Out Preferences</a></li>
+                </ul>
+                <!-- Copyright text -->
+                <div class="copyright">
+                  <div class="certification">
+                    <img src="./images/certification.svg" alt="Certification" />
+                  </div>
+                  <p>
+                    Copyright © 2024 Rizz Pharma All Right Reserved - Built by
+                    Business Web Social
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Footer bottom - Large Logo -->
+          <div class="footer_bottom">
+            <div class="large_logo">
+              <img src="./images/Rizz-Pharma.svg" alt="Rizz Pharma" />
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+<!-- JavaScript link -->
+<script src="./js/script.js"></script>
+  </body>
+</html>

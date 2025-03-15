@@ -1,0 +1,31 @@
+@import "./setting.scss";
+@import "./Components/minxins";
+@import 'base/fonts';
+body {
+    font-family: $font-main;
+}
+
+.container {
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 0 20px; 
+    @media (max-width: 768px) {
+        padding: 10px;
+    }
+}
+#main {
+    background-image: url(../../images/BG-images.webp);
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+
+@import "./Components/header";
+@import "./Components/hero";
+@import "./Components/category";
+@import "./Components/service";
+@import "./Components/product";
+@import './Components/online';
+@import './Components/testimonial';
+@import 'Components/footer';

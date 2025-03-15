@@ -1,0 +1,111 @@
+.testimonial {
+    padding: 153px 0 226px;
+    background: rgba(255, 255, 255, 0.02);
+    overflow: hidden;
+
+    .section_title {
+        @include Headline-2;
+        text-align: center;
+        margin-bottom: 45px;
+    }
+
+    .testimonial_slider {
+        .slick-slide {
+            transform: scale(0.9);
+            transition: all 0.3s ease;
+            opacity: 0.5;
+            
+            // First visible slide (half-shown on left)
+            &.slick-active {
+                opacity: 0.7;
+            }
+            
+            // Center slides (fully visible)
+            &.slick-center,
+            &.slick-center + .slick-slide {
+                transform: scale(1);
+                opacity: 1;
+            }
+            
+            // Last visible slide (half-shown on right)
+            &.slick-active:last-child {
+                opacity: 0.7;
+            }
+        }
+
+        .testimonial_item {
+            padding: 0 12px;
+        }
+
+        .testimonial_content {
+            background: rgba(18, 18, 18, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 24px;
+            backdrop-filter: blur(10px);
+
+            .quote {
+                margin-bottom: 24px;
+
+                p {
+                    color: $primary-white;
+                    font-size: 16px;
+                    line-height: 1.6;
+                }
+            }
+
+            .rating {
+                display: flex;
+                gap: 8px;
+                margin-bottom: 24px;
+
+                img {
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+
+            .author {
+                display: flex;
+                align-items: center;
+                gap: 16px;
+
+                img {
+                    width: 48px;
+                    height: 48px;
+                    border-radius: 50%;
+                    object-fit: cover;
+                }
+
+                .author_info {
+                    h4 {
+                        color: $primary-white;
+                        font-size: 18px;
+                        margin: 0 0 4px;
+                    }
+
+                    p {
+                        color: rgba(255, 255, 255, 0.6);
+                        font-size: 14px;
+                        margin: 0;
+                    }
+                }
+            }
+        }
+
+        // Slick slider custom styles
+        .slick-dots {
+            bottom: -40px;
+
+            li {
+                button:before {
+                    color: rgba(255, 255, 255, 0.3);
+                }
+
+                &.slick-active button:before {
+                    color: #c1842d;
+                }
+            }
+        }
+    }
+}

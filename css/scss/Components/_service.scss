@@ -1,0 +1,81 @@
+.service {
+    background: rgba(49, 65, 140, 0.3);
+    backdrop-filter: blur(4px);
+    padding: 24px 0;
+    overflow: hidden;
+    position: relative;
+
+    .service_slider {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+
+        .slider_track {
+            display: flex;
+            gap: 80px;
+            animation: scroll 20s linear infinite;
+
+            &:hover {
+                animation-play-state: paused;
+            }
+
+            .service_item {
+                display: flex;
+                align-items: center;
+                gap: 16px;
+                flex-shrink: 0;
+                padding: 0 20px;
+
+                img {
+                    width: 32px;
+                    height: 32px;
+                    object-fit: contain;
+                    // filter: brightness(0) invert(1); // Makes icons white
+                }
+
+                h3 {
+                    color: $primary-white;
+                    font-family: $font-main;
+                    font-size: 22px;
+                    font-weight: 400;
+                    line-height: 120%;
+                    letter-spacing: 2px;
+                    white-space: nowrap;
+                }
+            }
+        }
+    }
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-50% - 40px)); // Half width plus half gap
+    }
+}
+
+// Responsive styles
+@media (max-width: 768px) {
+    .service {
+        .service_slider {
+            .slider_track {
+                gap: 40px;
+
+                .service_item {
+                    padding: 0 10px;
+
+                    img {
+                        width: 24px;
+                        height: 24px;
+                    }
+
+                    h3 {
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+    }
+}
