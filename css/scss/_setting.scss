@@ -12,7 +12,7 @@ $secondary-color: #3498db;
 $primary-white: #fff;
 $secondary-white: #fafafa;
 $primary-black: #000;
-$font-main: "Neue Montreal";
+$font-main: "Neue Montreal", sans-serif;
 $font-size-base: 16px;
 $font-size-h1: 2.5rem;
 $font-size-h2: 2rem;
@@ -26,8 +26,32 @@ $cat-5: linear-gradient(to bottom right, #70cbf2, #97b0fb);
 // Font Face Declarations
 @font-face {
     font-family: "Neue Montreal";
-    src: url("../fonts/NeueMontreal-Light.otf") format("opentype");
+    src: url("../../fonts/NeueMontreal-Light.otf") format("opentype");
     font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Neue Montreal";
+    src: url("../../fonts/NeueMontreal-Regular.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Neue Montreal";
+    src: url("../../fonts/NeueMontreal-Medium.otf") format("opentype");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Neue Montreal";
+    src: url("../../fonts/NeueMontreal-Bold.otf") format("opentype");
+    font-weight: 700;
     font-style: normal;
     font-display: swap;
 }
@@ -42,14 +66,6 @@ $cat-5: linear-gradient(to bottom right, #70cbf2, #97b0fb);
 
 @font-face {
     font-family: "Neue Montreal";
-    src: url("../fonts/NeueMontreal-Regular.otf") format("opentype");
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: "Neue Montreal";
     src: url("../fonts/NeueMontreal-Italic.otf") format("opentype");
     font-weight: 400;
     font-style: italic;
@@ -58,25 +74,9 @@ $cat-5: linear-gradient(to bottom right, #70cbf2, #97b0fb);
 
 @font-face {
     font-family: "Neue Montreal";
-    src: url("../fonts/NeueMontreal-Medium.otf") format("opentype");
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: "Neue Montreal";
     src: url("../fonts/NeueMontreal-MediumItalic.otf") format("opentype");
     font-weight: 500;
     font-style: italic;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: "Neue Montreal";
-    src: url("../fonts/NeueMontreal-Bold.otf") format("opentype");
-    font-weight: 700;
-    font-style: normal;
     font-display: swap;
 }
 

@@ -23,6 +23,10 @@
       type="text/javascript"
       src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
     ></script>
+    <!-- Add these lines before your CSS links -->
+    <link rel="preload" href="./fonts/NeueMontreal-Regular.otf" as="font" type="font/otf" crossorigin>
+    <link rel="preload" href="./fonts/NeueMontreal-Medium.otf" as="font" type="font/otf" crossorigin>
+    <link rel="preload" href="./fonts/NeueMontreal-Bold.otf" as="font" type="font/otf" crossorigin>
   </head>
   <body>
     <div id="main">
@@ -287,16 +291,17 @@
               <div class="footer_cta">
                 <h2>Let's Stay In Touch</h2>
                 <p>Keep up to date with our latest news & special offers.</p>
-                <div class="email_signup">
-                  <input type="email" placeholder="enter your email" />
-                  <button type="submit">
-                    <img src="./images/icons/send.svg" alt="Submit" />
-                  </button>
-                </div>
               </div>
-              <!-- HIPAA Logo below CTA -->
-              <div class="hipaa_logo">
-                <img src="./images/HIPAA-Compliant.svg" alt="HIPAA Compliant" />
+              <div class="email_signup">
+                <input 
+                    type="email" 
+                    placeholder="enter your email" 
+                    autocomplete="email"
+                    spellcheck="false"
+                />
+                <button type="submit">
+                    <img src="./images/icons/paper-plan.svg" alt="Submit" />
+                </button>
               </div>
             </div>
 
@@ -314,15 +319,6 @@
                   <h3>Contact Info</h3>
                   <a href="mailto:hello@rizzpharma.com">hello@rizzpharma.com</a>
                 </div>
-                <!-- Social Links -->
-                <div class="social_links">
-                  <a href="#" class="social_link facebook">
-                    <img src="./images/facebook.svg" alt="Facebook" />
-                  </a>
-                  <a href="#" class="social_link instagram">
-                    <img src="./images/instagram.svg" alt="Instagram" />
-                  </a>
-                </div>
               </div>
 
               <!-- Our Company Column -->
@@ -336,24 +332,43 @@
                   <li><a href="#">CCPA Opt-Out</a></li>
                   <li><a href="#">Opt-Out Preferences</a></li>
                 </ul>
-                <!-- Copyright text -->
-                <div class="copyright">
-                  <div class="certification">
-                    <img src="./images/certification.svg" alt="Certification" />
-                  </div>
-                  <p>
-                    Copyright © 2024 Rizz Pharma All Right Reserved - Built by
-                    Business Web Social
-                  </p>
-                </div>
               </div>
+            </div>
+          </div>
+
+          <!-- Footer middle - HIPAA Logo, Social Links, and Copyright -->
+          <div class="footer_middle">
+            <!-- HIPAA Logo below CTA -->
+            <div class="hipaa_logo">
+              <img src="./images/hipaa.webp" alt="HIPAA Compliant" />
+            </div>
+
+            <!-- Right - Social Links and Copyright -->
+            <div class="footer_right">
+                <!-- Social Links -->
+                <div class="social_links">
+                    <a href="#" class="social_link">
+                        <img src="./images/icons/facebook-2.svg" alt="Facebook">
+                    </a>
+                    <a href="#" class="social_link">
+                        <img src="./images/icons/instagram-2.svg" alt="Instagram">
+                    </a>
+                </div>
+
+                <!-- Copyright Section -->
+                <div class="copyright_section">
+                    <div class="certification_logo">
+                        <img src="./images/copy-right.svg" alt="Certification">
+                    </div>
+                    <p>Copyright © 2024 Rizz Pharma All Right Reserved - Built by Business Web Social</p>
+                </div>
             </div>
           </div>
 
           <!-- Footer bottom - Large Logo -->
           <div class="footer_bottom">
             <div class="large_logo">
-              <img src="./images/Rizz-Pharma.svg" alt="Rizz Pharma" />
+              <img src="./images/bottom-Branding.webp" alt="Rizz Pharma" />
             </div>
           </div>
         </div>
