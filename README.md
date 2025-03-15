@@ -124,5 +124,4 @@ A modern, responsive e-commerce website for Rizz Pharma built with HTML, SCSS, a
 - Images: Custom product images
 
 ## License
-
-[Your License Type]
+All Right Reserved by Fayshal Rana

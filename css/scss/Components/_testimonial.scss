@@ -1,6 +1,5 @@
 .testimonial {
     padding: 153px 0 226px;
-    background: rgba(255, 255, 255, 0.02);
     overflow: hidden;
 
     .section_title {
@@ -10,100 +9,139 @@
     }
 
     .testimonial_slider {
-        .slick-slide {
-            transform: scale(0.9);
-            transition: all 0.3s ease;
-            opacity: 0.5;
-            
-            // First visible slide (half-shown on left)
-            &.slick-active {
-                opacity: 0.7;
-            }
-            
-            // Center slides (fully visible)
-            &.slick-center,
-            &.slick-center + .slick-slide {
-                transform: scale(1);
-                opacity: 1;
-            }
-            
-            // Last visible slide (half-shown on right)
-            &.slick-active:last-child {
-                opacity: 0.7;
-            }
-        }
-
         .testimonial_item {
-            padding: 0 12px;
-        }
-
-        .testimonial_content {
-            background: rgba(18, 18, 18, 0.5);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 16px;
-            padding: 24px;
+            padding: 32px;
+            background: url("../../images/testimonial-bg.svg") no-repeat;
+            background-size: cover;
+            background-position: center;
             backdrop-filter: blur(10px);
+            border-radius: 16px;
+            margin: 0 8px;
+            position: relative;
 
-            .quote {
-                margin-bottom: 24px;
-
-                p {
-                    color: $primary-white;
-                    font-size: 16px;
-                    line-height: 1.6;
-                }
+            // Add overlay to ensure content readability
+            &::before {
+                content: "";
+                position: absolute;
+                inset: 0;
+                background: rgba(18, 18, 18, 0.5);
+                border-radius: 16px;
+                backdrop-filter: blur(10px);
             }
 
-            .rating {
+            .testimonial_content {
+                position: relative; // Ensure content stays above overlay
+                z-index: 1;
                 display: flex;
-                gap: 8px;
-                margin-bottom: 24px;
-
-                img {
-                    width: 20px;
-                    height: 20px;
-                }
-            }
-
-            .author {
-                display: flex;
+                flex-direction: column;
                 align-items: center;
-                gap: 16px;
+                text-align: center;
 
-                img {
-                    width: 48px;
-                    height: 48px;
-                    border-radius: 50%;
-                    object-fit: cover;
+                .quote-icon {
+                    margin-bottom: 30px;
+                    display: flex;
+                    justify-content: flex-start;
+                    width: 100%;
+                    img {
+                        width: 32px;
+                        height: 32px;
+                    }
                 }
 
-                .author_info {
-                    h4 {
-                        color: $primary-white;
+                .quote {
+                    margin: 0 0 32px;
+                    text-align: left;
+                    p {
+                        color: #fff;
                         font-size: 18px;
-                        margin: 0 0 4px;
+                        line-height: 150%;
+                        font-weight: 400;
+                    }
+                }
+
+                .rating {
+                    display: flex;
+                    justify-content: center;
+                    gap: 8px;
+                    margin-bottom: 24px;
+
+                    img {
+                        width: 24px;
+                        height: 24px;
+                    }
+                }
+
+                .author {
+                    display: flex;
+                    align-items: center;
+                    gap: 20px;
+
+                    img {
+                        width: 64px;
+                        height: 64px;
+                        border-radius: 50%;
+                        object-fit: cover;
                     }
 
-                    p {
-                        color: rgba(255, 255, 255, 0.6);
-                        font-size: 14px;
-                        margin: 0;
+                    .author_info {
+                        text-align: center;
+
+                        h4 {
+                            color: #fff;
+                            font-size: 20px;
+                            font-weight: 500;
+                            margin-bottom: 4px;
+                        }
+
+                        p {
+                            color: rgba(255, 255, 255, 0.6);
+                            font-size: 16px;
+                        }
                     }
                 }
             }
         }
 
-        // Slick slider custom styles
+        // Remove active item styling
+        .slick-slide {
+            opacity: 1;
+            transform: none;
+        }
+
+        // Adjust slick dots
         .slick-dots {
-            bottom: -40px;
+            bottom: -50px;
 
             li {
-                button:before {
-                    color: rgba(255, 255, 255, 0.3);
+                width: 16px;
+                height: 16px;
+                margin: 0 8px;
+
+                button {
+                    width: 16px;
+                    height: 16px;
+                    padding: 0;
+
+                    &:before {
+                        content: "";
+                        width: 16px;
+                        height: 16px;
+                        background: rgba(255, 255, 255, 0.2);
+                        border-radius: 50%;
+                        opacity: 1;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        color: transparent;
+                        transition: background 0.3s ease;
+                    }
                 }
 
-                &.slick-active button:before {
-                    color: #c1842d;
+                &.slick-active {
+                    button:before {
+                        background: rgba(185, 184, 184, 1);
+                        opacity: 1;
+                    }
                 }
             }
         }

@@ -154,7 +154,7 @@ const testimonials = [
     author: {
       name: "John Williams",
       position: "Lead designer",
-      image: "./images/11008607 1.svg",
+      image: "./images/Ellipse.svg",
     },
   },
   {
@@ -165,7 +165,7 @@ const testimonials = [
     author: {
       name: "John Williams",
       position: "Lead designer",
-      image: "./images/11008607 1.svg",
+      image: "./images/Ellipse.svg",
     },
   },
   {
@@ -176,7 +176,7 @@ const testimonials = [
     author: {
       name: "John Williams",
       position: "Lead designer",
-      image: "./images/11008607 1.svg",
+      image: "./images/Ellipse.svg",
     },
   },
   {
@@ -187,7 +187,7 @@ const testimonials = [
     author: {
       name: "John Williams",
       position: "Lead designer",
-      image: "./images/11008607 1.svg",
+      image: "./images/Ellipse.svg",
     },
   },
   {
@@ -198,7 +198,7 @@ const testimonials = [
     author: {
       name: "John Williams",
       position: "Lead designer",
-      image: "./images/11008607 1.svg",
+      image: "./images/Ellipse.svg",
     },
   },
   {
@@ -209,7 +209,7 @@ const testimonials = [
     author: {
       name: "John Williams",
       position: "Lead designer",
-      image: "./images/11008607 1.svg",
+      image: "./images/Ellipse.svg",
     },
   },
 ];
@@ -264,19 +264,22 @@ function createProductCard(product) {
 
 // Function to create testimonial HTML
 function createTestimonialCard(testimonial) {
+  // Create rating stars with filled and blank stars
   const stars = Array(5)
     .fill("")
-    .map(
-      (_, index) =>
-        `<img src="./images/Vector (1).svg" alt="star" class="${
-          index < testimonial.rating ? "active" : ""
-        }">`
-    )
+    .map((_, index) => {
+      const starType =
+        index < testimonial.rating ? "starfill.svg" : "starBlank.svg";
+      return `<img src="./images/icons/${starType}" alt="star" style="opacity: 1;">`;
+    })
     .join("");
 
   return `
         <div class="testimonial_item">
             <div class="testimonial_content">
+                <div class="quote-icon">
+                    <img src="./images/icons/quote.svg" alt="quote">
+                </div>
                 <div class="quote">
                     <p>${testimonial.quote}</p>
                 </div>
@@ -547,33 +550,29 @@ function initializeTestimonialSlider() {
       dots: true,
       infinite: true,
       speed: 500,
-      slidesToShow: 4, // Show 4 items (2 full + 2 half)
+      slidesToShow: 4,
       slidesToScroll: 1,
-      centerMode: true,
-      centerPadding: "0", // No extra padding needed
       arrows: false,
+      centerMode: false,
       autoplay: true,
       autoplaySpeed: 3000,
       responsive: [
         {
-          breakpoint: 1366,
+          breakpoint: 1400,
           settings: {
             slidesToShow: 3,
           },
         },
         {
-          breakpoint: 992,
+          breakpoint: 1200,
           settings: {
             slidesToShow: 2,
-            centerMode: false,
           },
         },
         {
           breakpoint: 768,
           settings: {
             slidesToShow: 1,
-            centerMode: true,
-            centerPadding: "40px",
           },
         },
       ],
@@ -635,11 +634,11 @@ $(document).ready(function () {
   $(".testimonial_slider").slick({
     dots: true,
     infinite: true,
-    speed: 500,
-    slidesToShow: 3,
+    // speed: 500,
+    slidesToShow: 4,
     slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 3000,
+    autoplay: false,
+    // autoplaySpeed: 3000,
     responsive: [
       {
         breakpoint: 1024,
