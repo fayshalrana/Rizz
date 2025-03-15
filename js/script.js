@@ -603,7 +603,12 @@ function initializeHeaderScroll() {
     if (scrollTop > 100) {
       if (isScrollingUp) {
         // Scrolling up - show header
-        header.style.transform = "translateY(-92px)";
+        if(window.innerWidth > 1025){
+          header.style.transform = "translateY(-92px)";
+        }else{
+          header.style.transform = "translateY(0)";
+
+        }
         header.style.backdropFilter = "blur(10px)";
       } else {
         // Scrolling down - hide header
@@ -656,4 +661,16 @@ $(document).ready(function () {
       },
     ],
   });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const checkbox = document.getElementById("checkbox");
+  const menusLinks = document.querySelector(".menus_links");
+
+  if (checkbox && menusLinks) {
+    checkbox.addEventListener("change", function () {
+      menusLinks.classList.toggle("show");
+      document.body.style.overflow = this.checked ? "hidden" : "";
+    });
+  }
 });

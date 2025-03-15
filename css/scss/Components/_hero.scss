@@ -124,6 +124,9 @@
 // Responsive styles
 @media (max-width: 768px) {
     .hero {
+        padding: 110px  0 0;
+        min-height: 70vh;
+
         .hero_content {
             .content_wrapper {
                 max-width: 100%;
@@ -133,6 +136,10 @@
             .title {
                 font-size: 48px;
             }
+        }
+        .search_container {
+            padding: 0 15px;
+            margin: 20px auto 0;
         }
     }
 }

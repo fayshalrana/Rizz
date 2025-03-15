@@ -238,6 +238,14 @@
     }
 
     @media (max-width: 992px) {
+        .product {
+            padding: 50px 0;
+        }
+         .tab_filter_btn {
+            max-width: 100%;
+            gap: 8px;
+            overflow-x: scroll;
+        }
         .product_grid {
             grid-template-columns: repeat(2, 1fr);
         }
@@ -246,6 +254,12 @@
     @media (max-width: 576px) {
         .product_grid {
             grid-template-columns: 1fr;
+            .tab_filter_btn {
+                max-width: 100%;
+                gap: 8px;
+                padding-left: -22rem;
+                overflow-x: scroll;
+            }
         }
     }
 }

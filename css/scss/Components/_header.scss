@@ -1,3 +1,59 @@
+// Add at the top of the file
+.mobile-menu-toggle {
+    display: none; // Hidden by default on desktop
+    position: relative;
+    z-index: 1000;
+
+    #checkbox {
+        display: none;
+    }
+
+    .toggle {
+        position: relative;
+        width: 30px;
+        height: 40px; // Adjusted height
+        cursor: pointer;
+        display: block;
+    }
+
+    .bar {
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 4px;
+        border-radius: 2px;
+        background: #fff;
+        transition: all 0.35s cubic-bezier(0.5, -0.35, 0.35, 1.5);
+    }
+
+    .bar--top {
+        top: 0;
+    }
+
+    .bar--middle {
+        top: 10px;
+    }
+
+    .bar--bottom {
+        top: 19px;
+    }
+
+    // Checked state animations
+    #checkbox:checked + .toggle {
+        .bar--top {
+            transform: translateY(6px) rotate(50deg);
+        }
+
+        .bar--middle {
+            opacity: 0;
+        }
+
+        .bar--bottom {
+            transform: translateY(-15px) rotate(-45deg);
+        }
+    }
+}
+
 // Header section
 #header {
     width: 100%;
@@ -9,9 +65,9 @@
     z-index: 100;
 
     .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         padding: 0 24px;
         max-width: 1170px;
         margin: 0 auto;
@@ -166,16 +222,74 @@
     }
 }
 
-// Responsive styles
+// Update the media queries
 @media (max-width: 1024px) {
     #header {
+        padding: 5px 0;
+        .logo {
+            width: 56px;
+        }
+        .container {
+            position: relative;
+        }
+
+        .mobile-menu-toggle {
+            display: block;
+            margin-left: auto;
+            margin-right: 0;
+            z-index: 1001;
+        }
+
         .menus_links {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: 100px 20px 20px;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+
+            &.show {
+                display: flex;
+                background: rgba(0, 0, 0, 0.85);
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+            }
+
             .nav_top {
+                flex-direction: column;
                 gap: 32px;
+                width: 100%;
+                background: #000; // Solid black background
+                padding: 32px 20px;
+                border-radius: 16px;
 
                 nav ul {
+                    flex-direction: column;
                     gap: 24px;
+                    text-align: center;
+
+                    li a {
+                        font-size: 24px;
+                        justify-content: center;
+                        color: #fff;
+
+                        &:hover {
+                            color: #e1c06e;
+                        }
+                    }
                 }
+
+                .social-media ul {
+                    justify-content: center;
+                }
+            }
+
+            .nav_bottom {
+                display: none; // Hide signup, login and cart buttons
             }
         }
     }
@@ -183,8 +297,24 @@
 
 @media (max-width: 768px) {
     #header {
+        .logo {
+            width: 56px;
+        }
+
+        .mobile-menu-toggle {
+            display: block;
+        }
+
         .menus_links {
             display: none;
+
+            &.show {
+                display: flex;
+            }
+
+            .nav_bottom {
+                display: none; // Ensure buttons are hidden on mobile
+            }
         }
     }
 }

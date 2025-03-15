@@ -16,9 +16,27 @@
       href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"
     />
     <!-- Custom Fonts links -->
-    <link rel="preload" href="./fonts/NeueMontreal-Regular.otf" as="font" type="font/otf" crossorigin>
-    <link rel="preload" href="./fonts/NeueMontreal-Medium.otf" as="font" type="font/otf" crossorigin>
-    <link rel="preload" href="./fonts/NeueMontreal-Bold.otf" as="font" type="font/otf" crossorigin>
+    <link
+      rel="preload"
+      href="./fonts/NeueMontreal-Regular.otf"
+      as="font"
+      type="font/otf"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="./fonts/NeueMontreal-Medium.otf"
+      as="font"
+      type="font/otf"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="./fonts/NeueMontreal-Bold.otf"
+      as="font"
+      type="font/otf"
+      crossorigin
+    />
     <!-- CSS link -->
     <link rel="stylesheet" href="./css/scss/style.css" />
   </head>
@@ -26,15 +44,26 @@
     <div id="main">
       <header id="header">
         <div class="container">
-            <a href="#" class="logo">
-                <img src="./images/UFC_RIZZ-Logo.svg" alt="logo" />
-            </a>
-                 <div class="menus_links">
+          <a href="#" class="logo">
+            <img src="./images/UFC_RIZZ-Logo.svg" alt="logo" />
+          </a>
+
+          <!-- Move the toggle button here, before menus_links -->
+          <div class="mobile-menu-toggle">
+            <input id="checkbox" type="checkbox" />
+            <label class="toggle" for="checkbox">
+              <div class="bar bar--top"></div>
+              <div class="bar bar--middle"></div>
+              <div class="bar bar--bottom"></div>
+            </label>
+          </div>
+
+          <div class="menus_links">
             <!-- Top Row - Navigation + Social Icons -->
-                   <div class="nav_top">
-                    <nav>
-                        <ul>
-                            <li><a href="#">Home</a></li>
+            <div class="nav_top">
+              <nav>
+                <ul>
+                  <li><a href="#">Home</a></li>
                   <li>
                     <a href="#" class="has-dropdown">
                       Category
@@ -77,10 +106,10 @@
                   </li>
                   <li><a href="#">Contact Us</a></li>
                   <li><a href="#">FAQs</a></li>
-                        </ul>
+                </ul>
               </nav>
-                        <div class="social-media">
-                            <ul>
+              <div class="social-media">
+                <ul>
                   <li>
                     <a href="#"
                       ><img src="./images/icons/instagram.svg" alt="Instagram"
@@ -91,8 +120,8 @@
                       ><img src="./images/icons/facebook.svg" alt="Facebook"
                     /></a>
                   </li>
-                            </ul>
-                        </div>
+                </ul>
+              </div>
             </div>
             <!-- Bottom Row - Actions -->
             <div class="nav_bottom">
@@ -102,11 +131,11 @@
                 <a href="#" class="cart"
                   ><img src="./images/icons/cart.svg" alt="Cart"
                 /></a>
-                    </div>
-                   </div>
-                    </div>
-                 </div>
-                </header>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
 
       <!-- Hero section  -->
       <section class="hero">
@@ -145,7 +174,7 @@
             <!-- Cards will be dynamically inserted here -->
           </div>
         </div>
-                </section>
+      </section>
 
       <!-- Service section -->
       <section class="service">
@@ -190,47 +219,59 @@
         </div>
       </section>
 
-        <!-- Product section -->
-        <section class="product">
-          <div class="container">
-            <h2 class="section_title">
-              Solutions For Your <span>Unique</span> Health Goals
-            </h2>
-  
-            <div class="product_filter">
-              <button class="tab_nav_btn prev" disabled>
-                <img style="rotate: 180deg;" src="./images/icons/right-white-arrow.svg" alt="Previous">
-              </button>
-            
-              <div class="tab_filter_btn">
-                <button class="filter_btn active" data-category="all">All</button>
-              <button class="filter_btn" data-category="best-selling">Best Selling</button>
-              <button class="filter_btn" data-category="weight-loss">Weight Loss</button>
-              <button class="filter_btn" data-category="beauty">Beauty</button>
-              <button class="filter_btn" data-category="testosterone">Testosterone</button>
-              <button class="filter_btn" data-category="sexual-health">Sexual Health</button>
-              </div>
-              <button class="tab_nav_btn next">
-                <img src="./images/icons/right-white-arrow.svg" alt="Next">
-              </button>
-</div>
+      <!-- Product section -->
+      <section class="product">
+        <div class="container">
+          <h2 class="section_title">
+            Solutions For Your <span>Unique</span> Health Goals
+          </h2>
 
-            <!-- Product grid -->
-            <div class="product_grid">
-              <!-- Products will be dynamically inserted here -->
-            </div>
-  
-           <!-- Product Navigation -->
-          <div class="product_navigation show">
-            <button class="nav_btn prev" disabled>
-              <img src="./images/icons/right-arrow.svg" alt="Previous">
+          <div class="product_filter">
+            <button class="tab_nav_btn prev" disabled>
+              <img
+                style="rotate: 180deg"
+                src="./images/icons/right-white-arrow.svg"
+                alt="Previous"
+              />
             </button>
-            <button class="nav_btn next">
-              <img src="./images/icons/left-arrow.svg" alt="Next">
+
+            <div class="tab_filter_btn">
+              <button class="filter_btn active" data-category="all">All</button>
+              <button class="filter_btn" data-category="best-selling">
+                Best Selling
+              </button>
+              <button class="filter_btn" data-category="weight-loss">
+                Weight Loss
+              </button>
+              <button class="filter_btn" data-category="beauty">Beauty</button>
+              <button class="filter_btn" data-category="testosterone">
+                Testosterone
+              </button>
+              <button class="filter_btn" data-category="sexual-health">
+                Sexual Health
+              </button>
+            </div>
+            <button class="tab_nav_btn next">
+              <img src="./images/icons/right-white-arrow.svg" alt="Next" />
             </button>
           </div>
-        </section>
-  
+
+          <!-- Product grid -->
+          <div class="product_grid">
+            <!-- Products will be dynamically inserted here -->
+          </div>
+        </div>
+
+        <!-- Product Navigation -->
+        <div class="product_navigation show">
+          <button class="nav_btn prev" disabled>
+            <img src="./images/icons/right-arrow.svg" alt="Previous" />
+          </button>
+          <button class="nav_btn next">
+            <img src="./images/icons/left-arrow.svg" alt="Next" />
+          </button>
+        </div>
+      </section>
 
       <!-- Online section -->
       <section class="online">
@@ -287,14 +328,14 @@
                 <p>Keep up to date with our latest news & special offers.</p>
               </div>
               <div class="email_signup">
-                <input 
-                    type="email" 
-                    placeholder="Enter your email" 
-                    autocomplete="email"
-                    spellcheck="false"
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  autocomplete="email"
+                  spellcheck="false"
                 />
                 <button type="submit">
-                    <img src="./images/icons/paper-plan.svg" alt="Submit" />
+                  <img src="./images/icons/paper-plan.svg" alt="Submit" />
                 </button>
               </div>
             </div>
@@ -339,23 +380,26 @@
 
             <!-- Right - Social Links and Copyright -->
             <div class="footer_right">
-                <!-- Social Links -->
-                <div class="social_links">
-                    <a href="#" class="social_link">
-                        <img src="./images/icons/facebook-2.svg" alt="Facebook">
-                    </a>
-                    <a href="#" class="social_link">
-                        <img src="./images/icons/instagram-2.svg" alt="Instagram">
-                    </a>
-                </div>
+              <!-- Social Links -->
+              <div class="social_links">
+                <a href="#" class="social_link">
+                  <img src="./images/icons/facebook-2.svg" alt="Facebook" />
+                </a>
+                <a href="#" class="social_link">
+                  <img src="./images/icons/instagram-2.svg" alt="Instagram" />
+                </a>
+              </div>
 
-                <!-- Copyright Section -->
-                <div class="copyright_section">
-                    <div class="certification_logo">
-                        <img src="./images/copy-right.svg" alt="Certification">
-                    </div>
-                    <p>Copyright © 2024 Rizz Pharma All Right Reserved - Built by Business Web Social</p>
+              <!-- Copyright Section -->
+              <div class="copyright_section">
+                <div class="certification_logo">
+                  <img src="./images/copy-right.svg" alt="Certification" />
                 </div>
+                <p>
+                  Copyright © 2024 Rizz Pharma All Right Reserved - Built by
+                  Business Web Social
+                </p>
+              </div>
             </div>
           </div>
 
@@ -376,7 +420,7 @@
       src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
     ></script>
 
-<!-- JavaScript link -->
-<script src="./js/script.js"></script>
+    <!-- JavaScript link -->
+    <script src="./js/script.js"></script>
   </body>
 </html>

@@ -7,9 +7,15 @@
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 182px;
+        margin-bottom: 72px;
 
-        @media (max-width: 992px) {
-            flex-direction: column;
+        @media (max-width: 1023.98px) {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 60px;
+        }
+        @media (max-width: 767.98px) {
+            grid-template-columns: repeat(1, 1fr);
+            gap: 30px;
         }
 
         .footer_left {
@@ -20,6 +26,11 @@
             justify-content: center;
             align-items: center;
             flex-direction: column;
+
+            @media (max-width: 768px) {
+                max-width: 100%;
+                padding: 24px 20px;
+            }
 
             // Gradient border effect
             &::before {
@@ -52,6 +63,11 @@
             .footer_cta {
                 text-align: center;
                 width: 280px;
+
+                @media (max-width: 768px) {
+                    width: 100%;
+                }
+
                 h2 {
                     font-size: 43px;
                     line-height: 120%;
@@ -59,6 +75,10 @@
                     font-family: $font-main;
                     font-weight: 400;
                     color: #fff;
+
+                    @media (max-width: 768px) {
+                        font-size: 32px;
+                    }
                 }
 
                 p {
@@ -72,6 +92,13 @@
             }
 
             .email_signup {
+                width: 100%;
+                max-width: 350px;
+
+                @media (max-width: 768px) {
+                    max-width: 100%;
+                }
+
                 display: flex;
                 align-items: center;
                 border-radius: 8px;
@@ -87,13 +114,13 @@
                     flex: 1;
                     background: transparent;
                     border: none;
-                    padding: 24px 20px;
+                    padding: 16px 20px;
                     color: #fff;
                     font-family: "Neue Montreal", sans-serif;
                     font-size: 16px;
                     font-weight: 400;
                     width: 100%;
-                    min-width: 300px;
+                    min-width: auto;
 
                     &::placeholder {
                         color: rgba(255, 255, 255, 0.5);
@@ -101,6 +128,10 @@
 
                     &:focus {
                         outline: none;
+                    }
+
+                    @media (max-width: 768px) {
+                        padding: 12px 16px;
                     }
                 }
 
@@ -129,18 +160,27 @@
         .footer_right {
             display: flex;
             gap: 80px;
-            flex: 1;
+
+            @media (max-width: 1024px) {
+                gap: 40px;
+            }
 
             @media (max-width: 768px) {
                 flex-direction: column;
+                align-items: center;
                 gap: 40px;
             }
+
             .links_column {
+                flex: 1;
+                @media (max-width: 768px) {
+                   text-align: center;
+                }
                 h3 {
                     font-size: 12px;
                     font-family: $font-main;
                     font-weight: 400;
-                    letter-spacing: .5px;
+                    letter-spacing: 0.5px;
                     margin-bottom: 30px;
                     color: rgba(255, 255, 255, 1);
                 }
@@ -148,17 +188,21 @@
                 ul {
                     list-style: none;
                     padding: 0;
-                    margin-bottom: 60px;
+                    margin-bottom: 40px;
+
+                    @media (max-width: 768px) {
+                        margin-bottom: 24px;
+                    }
 
                     li {
-                        margin-bottom: 20px;
+                        margin-bottom: 16px;
 
                         a {
                             color: rgba(255, 255, 255, 1);
                             font-size: 16px;
                             font-family: $font-main;
                             font-weight: 400;
-                            letter-spacing: .5px;
+                            letter-spacing: 0.5px;
                             text-decoration: none;
                             transition: color 0.3s;
 
@@ -210,19 +254,39 @@
             }
         }
     }
+
     .footer_middle {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         margin: 72px 0 0;
         gap: 182px;
+        padding: 40px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+        @media (max-width: 1024px) {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            text-align: center;
+        }
+        @media (max-width: 767.98px) {
+            grid-template-columns: repeat(1, 1fr);
+            gap: 20px;
+            text-align: center;
+        }
 
         .hipaa_logo {
             width: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
+
             img {
                 max-width: 200px;
+
+                @media (max-width: 768px) {
+                    max-width: 160px;
+                }
             }
         }
 
@@ -232,29 +296,13 @@
             align-items: flex-start;
             gap: 26px;
 
+            @media (max-width: 1024px) {
+                align-items: center;
+            }
+
             .social_links {
                 display: flex;
                 gap: 16px;
-
-                a {
-                    width: 40px;
-                    height: 40px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    background: rgba(255, 255, 255, 0.1);
-                    border-radius: 50%;
-                    transition: background 0.3s ease;
-
-                    &:hover {
-                        background: rgba(255, 255, 255, 0.2);
-                    }
-
-                    img {
-                        width: 20px;
-                        height: 20px;
-                    }
-                }
             }
 
             .copyright_section {
@@ -262,10 +310,16 @@
                 align-items: center;
                 gap: 16px;
 
-                .certification_logo {
-                    img {
-                        width: 84px;
-                        width: auto;
+                @media (max-width: 768px) {
+                    flex-direction: column;
+                    text-align: center;
+                }
+
+                .certification_logo img {
+                    width: 84px;
+
+                    @media (max-width: 768px) {
+                        width: 60px;
                     }
                 }
 
@@ -273,8 +327,12 @@
                     color: rgba(255, 255, 255, 1);
                     font-size: 16px;
                     line-height: 160%;
-                    font-family: $font-main;
-                    font-weight: 400;
+                    text-align: left;
+
+                    @media (max-width: 768px) {
+                        font-size: 14px;
+                        text-align: center;
+                    }
                 }
             }
         }
@@ -282,12 +340,22 @@
 
     .footer_bottom {
         text-align: center;
+        padding: 40px 0;
+
+        @media (max-width: 768px) {
+            padding: 24px 0;
+        }
 
         .large_logo {
             width: 100%;
+
             img {
                 max-width: 100%;
                 opacity: 0.4;
+
+                @media (max-width: 768px) {
+                    max-width: 280px;
+                }
             }
         }
     }
