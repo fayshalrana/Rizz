@@ -1,149 +1,3 @@
-// Category data
-// const categories = [
-//   {
-//     id: "weight-loss",
-//     title: "Weight Loss",
-//     image: "./images/categoryImage1.svg",
-//     bgImage: "./images/categoryBgone.svg",
-//     categoryName: "weight-loss",
-//     gradient: "linear-gradient(145deg, #FF9797, #FF6B6B)",
-//   },
-//   {
-//     id: "testosterone",
-//     title: "Testosterone HRT",
-//     image: "./images/categoryImage2.svg",
-//     bgImage: "./images/categoryBgTwo.svg",
-//     categoryName: "testosterone",
-//     gradient: "linear-gradient(145deg, #F27070, #97B5FB)",
-//   },
-//   {
-//     id: "sexual-health",
-//     title: "Sexual Health",
-//     image: "./images/categoryImage3.svg",
-//     bgImage: "./images/categoryBgTwo.svg",
-//     categoryName: "sexual-health",
-//     gradient: "linear-gradient(145deg, #FFA97A, #FF8A5B)",
-//   },
-//   {
-//     id: "athletic",
-//     title: "Athletic Performance",
-//     image: "./images/categoryImage4.svg",
-//     bgImage: "./images/categoryBgone.svg",
-//     categoryName: "athletic",
-//     gradient: "linear-gradient(145deg, #F29B70, #FBD197)",
-//   },
-//   {
-//     id: "brain-health",
-//     title: "Brain Health",
-//     image: "./images/categoryImage5.svg",
-//     bgImage: "./images/categoryBgone.svg",
-//     categoryName: "brain-health",
-//     gradient: "linear-gradient(145deg, #A78BFA, #8B5CF6)",
-//   },
-
-//   {
-//     id: "beauty",
-//     title: "Beauty and Hair Loss",
-//     image: "./images/categoryImage6.svg",
-//     bgImage: "./images/categoryBgTwo.svg",
-//     categoryName: "beauty",
-//     gradient: "linear-gradient(145deg, #70CBF2, #97B0FB)",
-//   },
-// ];
-
-// Product data
-const products = [
-  {
-    id: 1,
-    name: "Retarutide",
-    image: "./images/Rizz-Reta-GLP3-24mg.svg",
-    price: "$39.99/per month",
-    category: "weight-loss",
-    badge: "Research use only",
-  },
-  {
-    id: 2,
-    name: "Lyopholized Glow (GHK-CU/ BPC-157/ TB-500)",
-    image: "./images/Rizz-2X-Blend-CJC_Ipa-5_5mg-research use only.svg",
-    price: "$39.99/per month",
-    category: "beauty",
-    badge: "Research use only",
-  },
-  {
-    id: 3,
-    name: "Compounded Sermorelin 15mg",
-    image:
-      "./images/Untitled-design-2024-06-27T162222.562-removebg-preview 1.svg",
-    price: "Starting at $179 Monthly + $45 consult",
-    category: "weight-loss",
-    badge: "Recurring Plan",
-  },
-  {
-    id: 4,
-    name: "2X CJC / Ipamorelin",
-    image: "./images/Rizz-2X-Blend-CJC_Ipa-5_5mg-research use only.svg",
-    price: "Starting at $149 Monthly",
-    category: "testosterone",
-    badge: null, // No badge
-  },
-  {
-    id: 5,
-    name: "Lyopholized Oxytocin",
-    image: "./images/Rizz-2X-Blend-CJC_Ipa-5_5mg-research use only (1).svg",
-    price: "$39.99/per month",
-    category: "sexual-health",
-    badge: "Research use only",
-  },
-  {
-    id: 6,
-    name: "Lyopholized Fi masteride 1mg",
-    image: "./images/Rizz-2X-Blend-CJC_Ipa-5_5mg-research use only.svg",
-    price: "$39.99/per month",
-    category: "beauty",
-    badge: "Recurring Plan",
-  },
-  {
-    id: 7,
-    name: "Compounded NAD+ 1000 mg",
-    image: "./images/Rizz-2X-Blend-CJC_Ipa-5_5mg-research use only.svg",
-    price: "Starting at $179 Monthly + $45 consult",
-    category: "brain-health",
-    badge: null, // No badge
-  },
-  {
-    id: 8,
-    name: "Lyopholized PT- 141 10mg",
-    image: "./images/Rizz-2X-Blend-CJC_Ipa-5_5mg-research use only.svg",
-    price: "Starting at $149 Monthly + $100 Lab Charge",
-    category: "sexual-health",
-    badge: "Research use only",
-  },
-  {
-    id: 9,
-    name: "Lyopholized Fi masteride 1mg",
-    image: "./images/Rizz-2X-Blend-CJC_Ipa-5_5mg-research use only.svg",
-    price: "$39.99/per month",
-    category: "beauty",
-    badge: "Recurring Plan",
-  },
-  {
-    id: 10,
-    name: "Compounded NAD+ 1000 mg",
-    image: "./images/Rizz-2X-Blend-CJC_Ipa-5_5mg-research use only.svg",
-    price: "Starting at $179 Monthly + $45 consult",
-    category: "brain-health",
-    badge: "Recurring Plan",
-  },
-  {
-    id: 11,
-    name: "Lyopholized PT- 141 10mg",
-    image: "./images/Rizz-2X-Blend-CJC_Ipa-5_5mg-research use only.svg",
-    price: "Starting at $149 Monthly + $100 Lab Charge",
-    category: "sexual-health",
-    badge: "Recurring Plan",
-  },
-];
-
 // testimonial  other data constants
 const testimonials = [
   {
@@ -225,39 +79,6 @@ function createCategoryCard(category) {
       </div>
     </div>
   `;
-}
-
-// Function to create product cards
-function createProductCard(product) {
-  return `
-        <div class="product_card" data-category="${product.category}">
-            ${
-              product.badge
-                ? `
-                <span class="badge ${
-                  product.badge === "Research use only"
-                    ? "research"
-                    : "recurring"
-                }">
-                    ${product.badge}
-                </span>
-            `
-                : ""
-            }
-            <div class="product_image">
-                <img src="${product.image}" alt="${product.name}">
-                 <h3>${product.name}</h3>
-            </div>
-            <div class="product_info">
-                <div class="price_cart">
-                    <p class="price">${product.price}</p>
-                </div>
-                 <button class="add_to_cart">
-                        <img src="../images/icons/cartWithPlus.svg" alt="Cart">
-                    </button>
-            </div>
-        </div>
-    `;
 }
 
 // Function to create testimonial HTML
@@ -346,8 +167,22 @@ async function initializeCategories() {
   }
 }
 
-// Function to initialize product section
-function initializeProducts() {
+// Fetch products from API
+async function fetchProducts() {
+  try {
+    const response = await fetch(
+      "https://project-nirvoya-server.vercel.app/rizz-products"
+    );
+    const products = await response.json();
+    return products;
+  } catch (error) {
+    console.error("Error fetching products:", error);
+    return [];
+  }
+}
+
+// Updated initializeProducts function
+async function initializeProducts() {
   const productGrid = document.querySelector(".product_grid");
   const filterContainer = document.querySelector(".product_filter");
   const filterBtns = Array.from(document.querySelectorAll(".filter_btn"));
@@ -367,55 +202,8 @@ function initializeProducts() {
   let currentPage = 0;
   const productsPerPage = 8;
 
-  // Tab Navigation Functions
-  function updateTabVisibility() {
-    const totalTabs = filterBtns.length;
-
-    filterBtns.forEach((btn, index) => {
-      btn.style.display =
-        index >= currentTabIndex && index < currentTabIndex + tabsToShow
-          ? "block"
-          : "none";
-    });
-
-    // Update prev button visibility
-    if (currentTabIndex === 0) {
-      tabPrevBtn.disabled = true;
-      tabPrevBtn.style.display = "none";
-    } else {
-      tabPrevBtn.disabled = false;
-      tabPrevBtn.style.display = "block";
-    }
-
-    // Update next button visibility
-    if (currentTabIndex + tabsToShow >= totalTabs && currentTabIndex !== 0) {
-      tabNextBtn.disabled = true;
-      tabNextBtn.style.display = "none";
-    } else {
-      tabNextBtn.disabled = false;
-      tabNextBtn.style.display = "block";
-    }
-  }
-
-  // Tab Navigation Event Listeners
-  if (tabPrevBtn) {
-    tabPrevBtn.addEventListener("click", () => {
-      if (currentTabIndex > 0) {
-        currentTabIndex--;
-        updateTabVisibility();
-      }
-    });
-  }
-
-  if (tabNextBtn) {
-    tabNextBtn.addEventListener("click", () => {
-      const totalTabs = filterBtns.length;
-      if (currentTabIndex + tabsToShow < totalTabs) {
-        currentTabIndex++;
-        updateTabVisibility();
-      }
-    });
-  }
+  // Fetch products from API
+  const products = await fetchProducts();
 
   // Product Display Function
   function displayProducts(category = "all", page = 0) {
@@ -446,18 +234,64 @@ function initializeProducts() {
     }
   }
 
-  // Filter Button Event Listeners
+  // Tab Navigation Functions
+  function updateTabVisibility() {
+    const totalTabs = filterBtns.length;
+
+    filterBtns.forEach((btn, index) => {
+      btn.style.display =
+        index >= currentTabIndex && index < currentTabIndex + tabsToShow
+          ? "block"
+          : "none";
+    });
+
+    if (currentTabIndex === 0) {
+      tabPrevBtn.disabled = true;
+      tabPrevBtn.style.display = "none";
+    } else {
+      tabPrevBtn.disabled = false;
+      tabPrevBtn.style.display = "block";
+    }
+
+    if (currentTabIndex + tabsToShow >= totalTabs && currentTabIndex !== 0) {
+      tabNextBtn.disabled = true;
+      tabNextBtn.style.display = "none";
+    } else {
+      tabNextBtn.disabled = false;
+      tabNextBtn.style.display = "block";
+    }
+  }
+
+  // Event Listeners
+  if (tabPrevBtn) {
+    tabPrevBtn.addEventListener("click", () => {
+      if (currentTabIndex > 0) {
+        currentTabIndex--;
+        updateTabVisibility();
+      }
+    });
+  }
+
+  if (tabNextBtn) {
+    tabNextBtn.addEventListener("click", () => {
+      const totalTabs = filterBtns.length;
+      if (currentTabIndex + tabsToShow < totalTabs) {
+        currentTabIndex++;
+        updateTabVisibility();
+      }
+    });
+  }
+
   filterBtns.forEach((btn) => {
     btn.addEventListener("click", () => {
       filterBtns.forEach((b) => b.classList.remove("active"));
       btn.classList.add("active");
       currentCategory = btn.dataset.category;
-      currentPage = 0; // Reset page when changing category
+      currentPage = 0;
       displayProducts(currentCategory, currentPage);
     });
   });
 
-  // Product Navigation Event Listeners
   if (productPrevBtn) {
     productPrevBtn.addEventListener("click", () => {
       if (currentPage > 0) {
@@ -488,6 +322,38 @@ function initializeProducts() {
   displayProducts("all", 0);
 }
 
+// Function to create product cards
+function createProductCard(product) {
+  return `
+        <div class="product_card" data-category="${product.category}">
+            ${
+              product.badge
+                ? `
+                <span class="badge ${
+                  product.badge === "Research use only"
+                    ? "research"
+                    : "recurring"
+                }">
+                    ${product.badge}
+                </span>
+            `
+                : ""
+            }
+            <div class="product_image">
+                <img src="${product.image}" alt="${product.name}">
+                 <h3>${product.name}</h3>
+            </div>
+            <div class="product_info">
+                <div class="price_cart">
+                    <p class="price">${product.price}</p>
+                </div>
+                 <button class="add_to_cart">
+                        <img src="../images/icons/cartWithPlus.svg" alt="Cart">
+                    </button>
+            </div>
+        </div>
+    `;
+}
 // Service slider functionality
 function initializeServiceSlider() {
   const sliderTrack = document.querySelector(".slider_track");
@@ -638,13 +504,13 @@ function initializeHeaderScroll() {
   });
 }
 
-// Initialize all components
-document.addEventListener("DOMContentLoaded", () => {
+// Update the initialization in DOMContentLoaded
+document.addEventListener("DOMContentLoaded", async () => {
   initializeHeaderScroll();
   initializeTestimonialSlider();
-  initializeCategories();
+  await initializeCategories();
   initializeServiceSlider();
-  initializeProducts();
+  await initializeProducts(); // Now awaiting products initialization
   initializeFilterNavigation();
 });
 
