@@ -3,6 +3,10 @@
 .product {
     padding: 160px 0;
 
+    @media (max-width: 768px) {
+            padding: 40px 0;
+    }
+
     .section_title {
         text-align: center;
         @include Headline-2;
@@ -252,6 +256,28 @@
     }
 
     @media (max-width: 576px) {
+         .card_content img {
+            left: 38px !important;
+        }
+        .product_filter {
+            padding: 0 5px;
+            padding-bottom: 60px;
+            margin-bottom: 20px;
+            position: relative;
+            .filter_btn {
+                padding: 8px 15px;
+                font-size: 12px;
+            }
+            .tab_filter_btn {
+                gap: 5px;
+            }
+            .tab_nav_btn {
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
         .product_grid {
             grid-template-columns: 1fr;
             .tab_filter_btn {

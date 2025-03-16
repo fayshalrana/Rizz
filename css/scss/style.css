@@ -452,6 +452,16 @@ body {
   position: relative;
   transition: all 0.3s ease;
 }
+@media (max-width: 768px) {
+  .hero .hero_content .cta_button .hero .hero_content .cta_button {
+    font-size: 15px;
+    padding: 12.5px 24px;
+  }
+  .hero .hero_content .cta_button .hero .search_container .search_wrapper .search_input {
+    padding: 20px 27px 20px 79.5px;
+    font-size: 14px;
+  }
+}
 .hero .hero_content .cta_button::before {
   content: "";
   position: absolute;
@@ -772,7 +782,7 @@ body {
     width: 100%;
   }
   .category .category_grid .category_column .category_card .card_content img {
-    left: 124px !important;
+    left: 40px !important;
   }
 }
 .service {
@@ -844,6 +854,11 @@ body {
 }
 .product {
   padding: 160px 0;
+}
+@media (max-width: 768px) {
+  .product {
+    padding: 40px 0;
+  }
 }
 .product .section_title {
   text-align: center;
@@ -1086,6 +1101,28 @@ body {
   }
 }
 @media (max-width: 576px) {
+  .product .card_content img {
+    left: 38px !important;
+  }
+  .product .product_filter {
+    padding: 0 5px;
+    padding-bottom: 60px;
+    margin-bottom: 20px;
+    position: relative;
+  }
+  .product .product_filter .filter_btn {
+    padding: 8px 15px;
+    font-size: 12px;
+  }
+  .product .product_filter .tab_filter_btn {
+    gap: 5px;
+  }
+  .product .product_filter .tab_nav_btn {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
   .product .product_grid {
     grid-template-columns: 1fr;
   }
@@ -1136,16 +1173,16 @@ body {
   flex-direction: column;
   gap: 24px;
 }
-.online .online_content .content_right .features_list li {
+.online .online_content .content_right li {
   display: flex;
   align-items: center;
   gap: 16px;
 }
-.online .online_content .content_right .features_list li img {
+.online .online_content .content_right li img {
   width: 18px;
   height: 18px;
 }
-.online .online_content .content_right .features_list li span {
+.online .online_content .content_right li span {
   color: #fff;
   font-size: 18px;
   font-weight: 400;
@@ -1167,18 +1204,27 @@ body {
 }
 @media (max-width: 576px) {
   .online {
-    padding: 60px 0;
+    padding: 60px 20px;
   }
   .online .online_content .content_left h2 {
     font-size: 36px;
   }
+  .online .online_content .content_right .features_list li {
+    justify-content: flex-start;
+  }
   .online .online_content .content_right .features_list li span {
     font-size: 16px;
+    text-align: left;
   }
 }
 .testimonial {
   padding: 153px 0 226px;
   overflow: hidden;
+}
+@media (max-width: 768px) {
+  .testimonial {
+    padding: 50px 0 100px;
+  }
 }
 .testimonial .section_title {
   font-size: 48px;

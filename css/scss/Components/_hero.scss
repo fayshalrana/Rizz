@@ -37,6 +37,18 @@
             position: relative;
             transition: all 0.3s ease;
 
+            @media (max-width: 768px) {
+                .hero .hero_content .cta_button {
+                    font-size: 15px;
+                    padding: 12.5px 24px;
+                }
+
+                .hero .search_container .search_wrapper .search_input {
+                    padding: 20px 27px 20px 79.5px;
+                    font-size: 14px;
+                }
+            }
+
             // Gradient border effect
             &::before {
                 content: "";

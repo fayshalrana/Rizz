@@ -1,6 +1,9 @@
 .testimonial {
     padding: 153px 0 226px;
     overflow: hidden;
+    @media (max-width: 768px) {
+        padding: 50px 0 100px;
+    }
 
     .section_title {
         @include Headline-2;
