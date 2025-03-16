@@ -1,55 +1,55 @@
 // Category data
-const categories = [
-  {
-    id: "weight-loss",
-    title: "Weight Loss",
-    image: "./images/categoryImage1.svg",
-    bgImage: "./images/categoryBgone.svg",
-    categoryName: "weight-loss",
-    gradient: "linear-gradient(145deg, #FF9797, #FF6B6B)",
-  },
-  {
-    id: "testosterone",
-    title: "Testosterone HRT",
-    image: "./images/categoryImage2.svg",
-    bgImage: "./images/categoryBgTwo.svg",
-    categoryName: "testosterone",
-    gradient: "linear-gradient(145deg, #F27070, #97B5FB)",
-  },
-  {
-    id: "sexual-health",
-    title: "Sexual Health",
-    image: "./images/categoryImage3.svg",
-    bgImage: "./images/categoryBgTwo.svg",
-    categoryName: "sexual-health",
-    gradient: "linear-gradient(145deg, #FFA97A, #FF8A5B)",
-  },
-  {
-    id: "athletic",
-    title: "Athletic Performance",
-    image: "./images/categoryImage4.svg",
-    bgImage: "./images/categoryBgone.svg",
-    categoryName: "athletic",
-    gradient: "linear-gradient(145deg, #F29B70, #FBD197)",
-  },
-  {
-    id: "brain-health",
-    title: "Brain Health",
-    image: "./images/categoryImage5.svg",
-    bgImage: "./images/categoryBgone.svg",
-    categoryName: "brain-health",
-    gradient: "linear-gradient(145deg, #A78BFA, #8B5CF6)",
-  },
+// const categories = [
+//   {
+//     id: "weight-loss",
+//     title: "Weight Loss",
+//     image: "./images/categoryImage1.svg",
+//     bgImage: "./images/categoryBgone.svg",
+//     categoryName: "weight-loss",
+//     gradient: "linear-gradient(145deg, #FF9797, #FF6B6B)",
+//   },
+//   {
+//     id: "testosterone",
+//     title: "Testosterone HRT",
+//     image: "./images/categoryImage2.svg",
+//     bgImage: "./images/categoryBgTwo.svg",
+//     categoryName: "testosterone",
+//     gradient: "linear-gradient(145deg, #F27070, #97B5FB)",
+//   },
+//   {
+//     id: "sexual-health",
+//     title: "Sexual Health",
+//     image: "./images/categoryImage3.svg",
+//     bgImage: "./images/categoryBgTwo.svg",
+//     categoryName: "sexual-health",
+//     gradient: "linear-gradient(145deg, #FFA97A, #FF8A5B)",
+//   },
+//   {
+//     id: "athletic",
+//     title: "Athletic Performance",
+//     image: "./images/categoryImage4.svg",
+//     bgImage: "./images/categoryBgone.svg",
+//     categoryName: "athletic",
+//     gradient: "linear-gradient(145deg, #F29B70, #FBD197)",
+//   },
+//   {
+//     id: "brain-health",
+//     title: "Brain Health",
+//     image: "./images/categoryImage5.svg",
+//     bgImage: "./images/categoryBgone.svg",
+//     categoryName: "brain-health",
+//     gradient: "linear-gradient(145deg, #A78BFA, #8B5CF6)",
+//   },
 
-  {
-    id: "beauty",
-    title: "Beauty and Hair Loss",
-    image: "./images/categoryImage6.svg",
-    bgImage: "./images/categoryBgTwo.svg",
-    categoryName: "beauty",
-    gradient: "linear-gradient(145deg, #70CBF2, #97B0FB)",
-  },
-];
+//   {
+//     id: "beauty",
+//     title: "Beauty and Hair Loss",
+//     image: "./images/categoryImage6.svg",
+//     bgImage: "./images/categoryBgTwo.svg",
+//     categoryName: "beauty",
+//     gradient: "linear-gradient(145deg, #70CBF2, #97B0FB)",
+//   },
+// ];
 
 // Product data
 const products = [
@@ -217,14 +217,12 @@ const testimonials = [
 // Function to create category cards
 function createCategoryCard(category) {
   return `
-    <div class="category_card ${category.categoryName}" 
-         style="background: ${category.gradient}"
-         data-category-id="${category.id}">
-         <img src="${category.bgImage}" alt="${category.title}" class="bg_image">
-        <div class="card_content">
-            <h3>${category.title}</h3>
-            <img src="${category.image}" alt="${category.title}">
-        </div>
+    <div class="category_card" data-category-id="${category.id}" style="background: ${category.gradient}">
+      <img class="bg_image" src="${category.bgImage}" alt="background pattern">
+      <div class="card_content">
+        <h3>${category.title}</h3>
+        <img src="${category.image}" alt="${category.title}">
+      </div>
     </div>
   `;
 }
@@ -298,10 +296,26 @@ function createTestimonialCard(testimonial) {
     `;
 }
 
-// Function to initialize category section
-function initializeCategories() {
+// Fetch categories from API
+async function fetchCategories() {
+  try {
+    const response = await fetch(
+      "https://project-nirvoya-server.vercel.app/rizz-category"
+    );
+    const categories = await response.json();
+    return categories;
+  } catch (error) {
+    console.error("Error fetching categories:", error);
+    return [];
+  }
+}
+
+// Initialize categories
+async function initializeCategories() {
   const categoryGrid = document.querySelector(".category_grid");
   if (categoryGrid) {
+    const categories = await fetchCategories();
+
     // Create three columns
     const columns = [
       categories.slice(0, 2), // First two categories
@@ -603,11 +617,10 @@ function initializeHeaderScroll() {
     if (scrollTop > 100) {
       if (isScrollingUp) {
         // Scrolling up - show header
-        if(window.innerWidth > 1025){
+        if (window.innerWidth > 1025) {
           header.style.transform = "translateY(-92px)";
-        }else{
+        } else {
           header.style.transform = "translateY(0)";
-
         }
         header.style.backdropFilter = "blur(10px)";
       } else {
