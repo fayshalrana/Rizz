@@ -121,7 +121,7 @@ function createTestimonialCard(testimonial) {
 async function fetchCategories() {
   try {
     const response = await fetch(
-      "https://project-nirvoya-server.vercel.app/rizz-category"
+      "https://project-nirvoya-server.vercel.app/api/rizz-category"
     );
     const categories = await response.json();
     return categories;
@@ -171,7 +171,7 @@ async function initializeCategories() {
 async function fetchProducts() {
   try {
     const response = await fetch(
-      "https://project-nirvoya-server.vercel.app/rizz-products"
+      "https://project-nirvoya-server.vercel.app/api/rizz-products"
     );
     const products = await response.json();
     return products;
